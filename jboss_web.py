@@ -14,7 +14,7 @@ def geturl(url):
 	Soup = BeautifulSoup(re.text,'html.parser')
 	for link in Soup.find_all('a'):
 		try: 
-			if str(link['class'][0]) == "name":
+			if str(link['class'][0]) == "name":	#a标签里面class=name
 				print link['href']
 			else :
 				pass #print link['href']
@@ -32,14 +32,6 @@ if __name__ == '__main__':
 			geturl(b)
 	# geturl()
 
-	#用于判断url是否失效
-	# url = 'http://www.111222233baidu.com'
-	# try:
-	# 	re = requests.get(url)
-	# 	print url
-	# except requests.exceptions.ConnectionError as e:
-	# 	print re
-	# 	pass
 
 # key=re.findall('<link>"(.*?)/"</link>',r.text,re.S)
 # for each
